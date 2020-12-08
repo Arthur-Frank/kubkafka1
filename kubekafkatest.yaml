@@ -147,6 +147,9 @@ kind: StatefulSet
 metadata:
   name: kafka
 spec:
+  selector:
+    matchLabels:
+      app: kafka
   serviceName: kafka-ss
   replicas: 3
   updateStrategy:
