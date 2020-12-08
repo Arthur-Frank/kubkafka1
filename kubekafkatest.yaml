@@ -129,8 +129,6 @@ spec:
         requests:
           storage: 10Gi
 ---
-timeout: 180
----
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
