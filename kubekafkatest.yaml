@@ -43,6 +43,9 @@ kind: StatefulSet
 metadata:
   name: zk
 spec:
+  selector:
+    matchLabels:
+      app: zk
   serviceName: zk-hs
   replicas: 3
   updateStrategy:
