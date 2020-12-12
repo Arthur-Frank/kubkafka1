@@ -183,7 +183,7 @@ spec:
       name: datadir
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageAccessName: slow
+      storageClassName: slow
       resources:
         requests:
           storage: 1Gi
