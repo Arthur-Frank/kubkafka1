@@ -11,8 +11,7 @@ spec:
       port: 9093 
       targetPort: 9093
       
-    - name: http
-      port: 2181 
+    - port: 2181 
       targetPort: 2181 
   selector:  
     app: kafkaApp 
