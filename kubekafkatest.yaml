@@ -127,7 +127,8 @@ spec:
   - metadata:
       name: datadir
     spec:
-      accessModes: [ "ReadWriteOnce" ]
+      accessModes:
+        - ReadWriteMany
       resources:
         requests:
           storage: 10Gi
