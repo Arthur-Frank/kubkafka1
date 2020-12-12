@@ -28,6 +28,9 @@ kind: StatefulSet
 metadata:
   name: kafka
 spec:
+  selector:
+    matchlabels:
+      app: kafka
   serviceName: kafka-hs
   replicas: 3
   podManagementPolicy: Parallel
