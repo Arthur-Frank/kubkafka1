@@ -8,7 +8,8 @@
     capacity:
       storage: 30Gi
     accessModes:
-      - ReadWriteMany
+      - ReadWriteOnce
+    storageClassName: slow
     persistentVolumeReclaimPolicy: Recycle
     nfs:
       path: "/srv/nfs/kubedata"
