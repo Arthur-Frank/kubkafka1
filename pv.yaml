@@ -6,7 +6,7 @@
       type: local
   spec:
     capacity:
-      storage: 50Gi
+      storage: 10Gi
     accessModes:
       - ReadWriteOnce
     storageClassName: slow
