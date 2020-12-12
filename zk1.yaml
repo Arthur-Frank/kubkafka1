@@ -128,6 +128,7 @@ spec:
       name: datadir
     spec:
       accessModes: [ "ReadWriteOnce" ]
+      storageClassName: slow
       resources:
         requests:
-          storage: 3Gi
+          storage: 10Gi
