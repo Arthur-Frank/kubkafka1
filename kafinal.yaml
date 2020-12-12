@@ -29,7 +29,7 @@ metadata:
   name: kafka
 spec:
   selector:
-    matchlabels:
+    matchLabels:
       app: kafka
   serviceName: kafka-hs
   replicas: 3
