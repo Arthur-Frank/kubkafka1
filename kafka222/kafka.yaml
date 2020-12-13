@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka
+  labels:
+    app: kafka
+    jmxexporter: enabled
+spec:
+  clusterIP: None
+  selector:
+    app: kafka
+  ports:
+  - name: listener
+    port: 9092
+  - name: jmxexporter
+    port: 7171
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: kafka
+  labels:
+    app: kafka
+spec:
+  serviceName: "kafka"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kafka
+  template:
+    metadata:
+      labels:
+        app: kafka
+    spec:
+      containers:
+      - name: kafka
+        image: kafka-base:local-v1
+        command: ["/bin/bash", "start-kafka.sh"]
+        ports:
+        - name: listener
+          containerPort: 9092
+        - name: jmxexporter
+          containerPort: 7171
